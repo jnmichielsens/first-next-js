@@ -1,19 +1,11 @@
 // src/pages/index.tsx
 import Link from 'next/link';
 import styles from './page.module.css';
-import Image from 'next/image';
 
 const Home = () => {
     return (
         <div className={styles.container}>
             <header className={styles.header}>
-                <Image
-                    src="/logo.png"
-                    alt="Logo"
-                    width={150}
-                    height={150}
-                    className={styles.logo}
-                />
                 <h1 className={styles.title}>Bienvenue sur Mon Application Next.js avec TypeScript!</h1>
                 <p className={styles.description}>
                     Découvrez les merveilles du développement web moderne avec Next.js.
