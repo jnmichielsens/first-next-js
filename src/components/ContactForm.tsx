@@ -120,7 +120,7 @@ export default function ContactForm() {
         ></textarea>
       </div>
 
-      <button type="submit" className="btn-primary w-full">
+      <button type="submit" className="btn-primary w-full bg-primary-color">
         Send Message
       </button>
     </motion.form>

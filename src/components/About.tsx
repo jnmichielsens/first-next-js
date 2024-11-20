@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ChefHat } from 'lucide-react';
+import {homePage} from "../constants/constants";
 
 export default function About() {
   const [ref, inView] = useInView({
@@ -11,7 +12,7 @@ export default function About() {
   });
 
   return (
-    <section ref={ref} id={'about'} className="py-24 px-6 md:px-12 lg:px-24">
+    <section ref={ref} id={homePage.About} className="py-24 px-6 md:px-12 lg:px-24">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}

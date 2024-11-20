@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import {homePage} from "../constants/constants";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,15 +22,13 @@ const Navbar = () => {
     <>
       <nav
         className={`fixed w-full z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-white shadow-md py-4' : 'bg-transparent py-6'
+          isScrolled ? 'bg-primary-color shadow-md py-4' : 'bg-transparent py-6'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <a
             href="#"
-            className={`text-2xl font-light tracking-wider ${
-              isScrolled ? 'text-gray-900' : 'text-white'
-            }`}
+            className={`text-2xl font-light tracking-wider text-white`}
           >
             MT
           </a>
@@ -39,9 +38,7 @@ const Navbar = () => {
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className={`nav-link ${
-                  isScrolled ? 'text-gray-900' : 'text-white'
-                }`}
+                className={`nav-link text-white`}
               >
                 {item}
               </a>
@@ -49,7 +46,7 @@ const Navbar = () => {
           </div>
 
           <button
-            className={`md:hidden ${isScrolled ? 'text-gray-900' : 'text-white'}`}
+            className={`md:hidden text-white`}
             onClick={() => setIsOpen(true)}
           >
             <Menu className="w-6 h-6" />
@@ -72,10 +69,10 @@ const Navbar = () => {
                 </button>
               </div>
               <div className="flex flex-col items-center space-y-8 mt-24">
-                {['About', 'Menu', 'Gallery', 'Contact'].map((item) => (
+                {[homePage.About, homePage.Menu, homePage.Gallery, homePage.Contact].map((item) => (
                   <a
                     key={item}
-                    href={`#${item.toLowerCase()}`}
+                    href={`#${item}`}
                     className="text-2xl nav-link"
                     onClick={() => setIsOpen(false)}
                   >

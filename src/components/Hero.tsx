@@ -40,7 +40,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.8 }}
-          className="btn-primary inline-block"
+          className="btn-primary inline-block bg-primary-color"
         >
           Book Your Event
         </motion.a>

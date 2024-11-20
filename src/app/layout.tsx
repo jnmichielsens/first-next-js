@@ -7,6 +7,8 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Melange Traiteur - Exceptional Catering Services',
   description: 'Exceptional catering for extraordinary moments. Professional catering services in Brussels.',
+  keywords: 'Melange, Traiteur, Catering, Services, Brussels, Events, Weddings, Parties, Corporate, Professional, Moments, Ninove',
+  authors: { name: 'jnm' },
 };
 
 export default function RootLayout({
