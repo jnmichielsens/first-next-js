@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { homePage } from '../constants/constants';
@@ -8,6 +8,11 @@ import { homePage } from '../constants/constants';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const menuItems = useMemo(
+    () => [homePage.About, homePage.Menu, homePage.Gallery, homePage.Contact],
+    []
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,12 +39,8 @@ const Navbar = () => {
           </a>
 
           <div className='hidden space-x-12 md:flex'>
-            {['About', 'Menu', 'Gallery', 'Contact'].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className={`nav-link text-white`}
-              >
+            {menuItems.map((item) => (
+              <a key={item} href={`#${item}`} className={`nav-link text-white`}>
                 {item}
               </a>
             ))}
@@ -69,12 +70,7 @@ const Navbar = () => {
                 </button>
               </div>
               <div className='mt-24 flex flex-col items-center space-y-8'>
-                {[
-                  homePage.About,
-                  homePage.Menu,
-                  homePage.Gallery,
-                  homePage.Contact,
-                ].map((item) => (
+                {menuItems.map((item) => (
                   <a
                     key={item}
                     href={`#${item}`}
