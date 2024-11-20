@@ -6,24 +6,24 @@ import background from '../../public/home/background.png';
 
 export default function Hero() {
   return (
-    <section className="h-screen relative flex items-center justify-center">
-      <div className="absolute inset-0">
+    <section className='relative flex h-screen items-center justify-center'>
+      <div className='absolute inset-0'>
         <Image
           src={background}
-          alt="Elegant table setting"
+          alt='Elegant table setting'
           fill
-          className="object-cover"
+          className='object-cover'
           priority
-          sizes="100vw"
+          sizes='100vw'
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className='absolute inset-0 bg-black/40' />
       </div>
-      <div className="relative text-center text-white z-10 px-4">
+      <div className='relative z-10 px-4 text-center text-white'>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl md:text-7xl font-light tracking-wider mb-6"
+          className='mb-6 text-5xl font-light tracking-wider md:text-7xl'
         >
           MELANGE TRAITEUR
         </motion.h1>
@@ -31,16 +31,16 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="text-xl md:text-2xl tracking-wide mb-8"
+          className='mb-8 text-xl tracking-wide md:text-2xl'
         >
           Exceptional Catering for Extraordinary Moments
         </motion.p>
         <motion.a
-          href="#contact"
+          href='#contact'
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.8 }}
-          className="btn-primary inline-block bg-primary-color"
+          className='btn-primary hover:bg-primary-dark inline-block bg-primary-color'
         >
           Book Your Event
         </motion.a>

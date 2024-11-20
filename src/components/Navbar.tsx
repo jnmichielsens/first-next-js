@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import {homePage} from "../constants/constants";
+import { homePage } from '../constants/constants';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,19 +21,19 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed w-full z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-primary-color shadow-md py-4' : 'bg-transparent py-6'
+        className={`fixed z-50 w-full transition-all duration-300 ${
+          isScrolled ? 'bg-primary-color py-4 shadow-md' : 'bg-transparent py-6'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <div className='mx-auto flex max-w-7xl items-center justify-between px-6'>
           <a
-            href="#"
+            href='#'
             className={`text-2xl font-light tracking-wider text-white`}
           >
             MT
           </a>
 
-          <div className="hidden md:flex space-x-12">
+          <div className='hidden space-x-12 md:flex'>
             {['About', 'Menu', 'Gallery', 'Contact'].map((item) => (
               <a
                 key={item}
@@ -46,10 +46,10 @@ const Navbar = () => {
           </div>
 
           <button
-            className={`md:hidden text-white`}
+            className={`text-white md:hidden`}
             onClick={() => setIsOpen(true)}
           >
-            <Menu className="w-6 h-6" />
+            <Menu className='h-6 w-6' />
           </button>
         </div>
       </nav>
@@ -60,20 +60,25 @@ const Navbar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-white z-50 md:hidden"
+            className='fixed inset-0 z-50 bg-white md:hidden'
           >
-            <div className="p-6">
-              <div className="flex justify-end">
+            <div className='p-6'>
+              <div className='flex justify-end'>
                 <button onClick={() => setIsOpen(false)}>
-                  <X className="w-6 h-6" />
+                  <X className='h-6 w-6' />
                 </button>
               </div>
-              <div className="flex flex-col items-center space-y-8 mt-24">
-                {[homePage.About, homePage.Menu, homePage.Gallery, homePage.Contact].map((item) => (
+              <div className='mt-24 flex flex-col items-center space-y-8'>
+                {[
+                  homePage.About,
+                  homePage.Menu,
+                  homePage.Gallery,
+                  homePage.Contact,
+                ].map((item) => (
                   <a
                     key={item}
                     href={`#${item}`}
-                    className="text-2xl nav-link"
+                    className='nav-link text-2xl'
                     onClick={() => setIsOpen(false)}
                   >
                     {item}
