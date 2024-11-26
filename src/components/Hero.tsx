@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import background from '../../public/home/background.png';
+import { homePage } from '../constants/constants';
 
 export default function Hero() {
   return (
@@ -36,7 +37,7 @@ export default function Hero() {
           Exceptional Catering for Extraordinary Moments
         </motion.p>
         <motion.a
-          href='#contact'
+          href={`#${homePage.Contact}`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.8 }}

@@ -14,13 +14,19 @@ export const contact = {
   },
   facebook: {
     action: 'https://www.facebook.com/profile.php?id=61566416427501',
-    label: 'Melange Traiteur ',
+    label: 'Melange Traiteur',
   },
 };
 
 export const homePage = {
-  About: 'About',
-  Menu: 'Menu',
-  Gallery: 'Gallery',
-  Contact: 'Contact',
+  About: 'about',
+  Menu: 'menu',
+  Gallery: 'gallery',
+  Contact: 'contact',
+};
+
+export const appPages = {
+  Home: '/',
+  Services: '/services',
+  Events: '/events',
 };
