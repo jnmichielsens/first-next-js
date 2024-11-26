@@ -58,7 +58,7 @@ export default function Gallery() {
         <h2 className='section-title text-center'>Our Creations</h2>
       </motion.div>
 
-      <div className='mx-auto max-w-6xl grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
+      <div className='mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
         {images.map((image, index) => (
           <motion.div
             key={index}

@@ -12,13 +12,7 @@ const ImageBanner = ({
 }) => (
   <section className='relative flex h-[80vh] items-center justify-center'>
     <div className='absolute inset-0'>
-      <Image
-        src={image}
-        alt={title}
-        fill
-        className='object-cover'
-        priority
-      />
+      <Image src={image} alt={title} fill className='object-cover' priority />
       <div className='absolute inset-0 bg-black/40' />
     </div>
     <div className='relative z-10 px-4 text-center text-white'>

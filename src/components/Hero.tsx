@@ -41,7 +41,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.8 }}
-          className='btn-primary hover:bg-primary-dark inline-block bg-primary-color'
+          className='btn-primary inline-block bg-primary-color hover:bg-primary-dark'
         >
           Book Your Event
         </motion.a>
