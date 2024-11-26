@@ -2,9 +2,11 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { EmailTemplateProps } from './email-template';
+import { PostMail } from '../app/api/send/route';
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<EmailTemplateProps>({
     name: '',
     email: '',
     phone: '',
@@ -15,8 +17,13 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log(formData);
+    PostMail(formData)
+      .then((res) => {
+        console.log('=>(ContactForm.tsx:22) res', res);
+      })
+      .catch((err) => {
+        console.log('=>(ContactForm.tsx:24) err', err);
+      });
   };
 
   const handleChange = (
@@ -142,7 +149,7 @@ export default function ContactForm() {
 
       <button
         type='submit'
-        className='btn-primary hover:bg-primary-dark w-full bg-primary-color'
+        className='btn-primary w-full bg-primary-color hover:bg-primary-dark'
       >
         Send Message
       </button>
