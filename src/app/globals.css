@@ -4,12 +4,12 @@
 
 @layer components {
   .nav-link {
-    @apply relative text-lg tracking-wide transition-colors hover:text-gray-600;
+    @apply relative text-lg tracking-wide transition-colors;
   }
 
   .nav-link::after {
     content: '';
-    @apply absolute -bottom-1 left-0 h-0.5 w-0 bg-gray-900 transition-all duration-300;
+    @apply absolute -bottom-1 left-0 h-0.5 w-0 bg-white transition-all duration-300;
   }
 
   .nav-link:hover::after {
