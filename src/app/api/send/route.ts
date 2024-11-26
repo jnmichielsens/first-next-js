@@ -4,9 +4,8 @@ import {
   EmailTemplateProps,
 } from '../../../components/email-template';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
-export async function PostMail(params: EmailTemplateProps) {
+export async function POST(params: EmailTemplateProps) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     const { data, error } = await resend.emails.send({
       from: 'Acme <onboarding@resend.dev>',

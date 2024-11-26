@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { EmailTemplateProps } from './email-template';
-import { PostMail } from '../app/api/send/route';
+import { POST } from '../app/api/send/route';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState<EmailTemplateProps>({
@@ -17,7 +17,7 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    PostMail(formData)
+    POST(formData)
       .then((res) => {
         console.log('=>(ContactForm.tsx:22) res', res);
       })
