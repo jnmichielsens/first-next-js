@@ -2,7 +2,9 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { homePage } from '../constants/constants';
+import { homePage } from '../../constants/constants';
+import { useTranslations } from 'next-intl';
+import Section from '../Section';
 
 const menuCategories = [
   {
@@ -59,28 +61,22 @@ const menuCategories = [
 ];
 
 export default function Menu() {
+  const t = useTranslations('menu');
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
 
   return (
-    <section
-      id={homePage.Menu}
-      className='bg-white px-6 py-24 md:px-12 lg:px-24'
-      ref={ref}
-    >
+    <Section id={homePage.Menu} sectionRef={ref} className={'bg-zinc-50'}>
       <div className='mx-auto max-w-6xl'>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className='section-title text-center'>Sample Menu</h2>
-          <p className='mb-16 text-center text-lg'>
-            Our menus are customizable to suit your preferences and dietary
-            requirements
-          </p>
+          <h2 className='section-title text-center'>{t('title')}</h2>
+          <p className='mb-16 text-center text-lg'>{t('subtitle')}</p>
         </motion.div>
 
         <div className='grid gap-12 md:grid-cols-3'>
@@ -107,6 +103,6 @@ export default function Menu() {
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

@@ -2,10 +2,13 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import background from '../../public/home/background.png';
-import { homePage } from '../constants/constants';
+import background from '../../../public/home/background.png';
+import { homePage } from '../../constants/constants';
+import { useTranslations } from 'next-intl';
 
 export default function Hero() {
+  const t = useTranslations('hero');
+
   return (
     <section className='relative flex h-screen items-center justify-center'>
       <div className='absolute inset-0'>
@@ -34,7 +37,7 @@ export default function Hero() {
           transition={{ delay: 0.5, duration: 0.8 }}
           className='mb-8 text-xl tracking-wide md:text-2xl'
         >
-          Exceptional Catering for Extraordinary Moments
+          {t('subtitle')}
         </motion.p>
         <motion.a
           href={`#${homePage.Contact}`}
@@ -43,7 +46,7 @@ export default function Hero() {
           transition={{ delay: 0.8, duration: 0.8 }}
           className='btn-primary inline-block bg-primary-color hover:bg-primary-dark'
         >
-          Book Your Event
+          {t('cta')}
         </motion.a>
       </div>
     </section>

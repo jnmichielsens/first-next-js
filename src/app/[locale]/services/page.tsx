@@ -1,8 +1,9 @@
 'use client';
 
 import { ChefHat, Users, GlassWater, UtensilsCrossed } from 'lucide-react';
-import service_1 from '../../../public/services/service_1.jpg';
-import ImageBanner from '../../components/ImageBanner';
+import service_1 from '../../../../public/services/service_1.jpg';
+import ImageBanner from '../../../components/ImageBanner';
+import Section from '../../../components/Section';
 
 const services = [
   {
@@ -36,7 +37,7 @@ export default function Services() {
     <>
       <ImageBanner image={service_1} title='Our Services' />
 
-      <section className='px-6 py-24 md:px-12 lg:px-24'>
+      <Section>
         <div className='mx-auto max-w-6xl'>
           <div className='grid gap-12 md:grid-cols-2 lg:grid-cols-4'>
             {services.map((service) => (
@@ -48,7 +49,7 @@ export default function Services() {
             ))}
           </div>
         </div>
-      </section>
+      </Section>
     </>
   );
 }

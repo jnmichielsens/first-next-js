@@ -19,6 +19,7 @@ export const contact = {
 };
 
 export const homePage = {
+  Hero: 'hero',
   About: 'about',
   Menu: 'menu',
   Gallery: 'gallery',

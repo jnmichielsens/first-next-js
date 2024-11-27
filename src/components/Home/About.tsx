@@ -3,20 +3,19 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ChefHat } from 'lucide-react';
-import { homePage } from '../constants/constants';
+import { homePage } from '../../constants/constants';
+import { useTranslations } from 'next-intl';
+import Section from '../Section';
 
 export default function About() {
+  const t = useTranslations('about');
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
 
   return (
-    <section
-      ref={ref}
-      id={homePage.About}
-      className='px-6 py-24 md:px-12 lg:px-24'
-    >
+    <Section id={homePage.About} sectionRef={ref}>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -24,15 +23,11 @@ export default function About() {
         className='mx-auto max-w-4xl text-center'
       >
         <ChefHat className='mx-auto mb-8 h-12 w-12 text-gray-800' />
-        <h2 className='section-title'>Our Philosophy</h2>
+        <h2 className='section-title'>{t('title')}</h2>
         <p className='mb-12 text-lg leading-relaxed md:text-xl'>
-          At Melange Traiteur, we believe that every gathering deserves
-          exceptional cuisine. Our passionate team crafts bespoke menus that
-          blend traditional techniques with contemporary flair, using only the
-          finest seasonal ingredients to create unforgettable culinary
-          experiences.
+          {t('description')}
         </p>
       </motion.div>
-    </section>
+    </Section>
   );
 }

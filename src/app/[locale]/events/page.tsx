@@ -1,11 +1,12 @@
 'use client';
 
 import Image from 'next/image';
-import background from '../../../public/events/background.jpg';
-import event_1 from '../../../public/events/event_1.jpg';
-import event_2 from '../../../public/events/event_2.jpg';
-import event_3 from '../../../public/events/event_3.jpg';
-import ImageBanner from '../../components/ImageBanner';
+import background from '../../../../public/events/background.jpg';
+import event_1 from '../../../../public/events/event_1.jpg';
+import event_2 from '../../../../public/events/event_2.jpg';
+import event_3 from '../../../../public/events/event_3.jpg';
+import ImageBanner from '../../../components/ImageBanner';
+import Section from '../../../components/Section';
 
 const events = [
   {
@@ -36,7 +37,7 @@ export default function Events() {
     <>
       <ImageBanner image={background} title='Upcoming Events' />
 
-      <section className='px-6 py-24 md:px-12 lg:px-24'>
+      <Section>
         <div className='mx-auto max-w-6xl'>
           <div className='grid gap-12 md:grid-cols-2 lg:grid-cols-3'>
             {events.map((event) => (
@@ -56,7 +57,7 @@ export default function Events() {
             ))}
           </div>
         </div>
-      </section>
+      </Section>
     </>
   );
 }

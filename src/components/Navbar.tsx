@@ -5,21 +5,38 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { appPages, homePage } from '../constants/constants';
 import { capitalizeFirstLetter } from '../services/capitalizeFirstLetter';
+import { Link } from '../i18n/routing';
+import { useTranslations } from 'next-intl';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Navbar() {
+  const t = useTranslations('navigation');
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const menuItems = useMemo(
-    () => [homePage.About, homePage.Menu, homePage.Gallery],
+    () => [
+      {
+        name: t('about'),
+        href: homePage.About,
+      },
+      {
+        name: t('menu'),
+        href: homePage.Menu,
+      },
+      {
+        name: t('gallery'),
+        href: homePage.Gallery,
+      },
+    ],
     []
   );
   const dropdownItems = useMemo(
     () => [
-      { name: 'Services', href: appPages.Services },
-      { name: 'Events', href: appPages.Events },
+      { name: t('services'), href: appPages.Services },
+      { name: t('events'), href: appPages.Events },
     ],
     []
   );
@@ -55,21 +72,21 @@ export default function Navbar() {
         }`}
       >
         <div className='mx-auto flex max-w-7xl items-center justify-between px-6'>
-          <a
+          <Link
             href='/'
             className={`text-2xl font-light tracking-wider text-white`}
           >
             MT
-          </a>
+          </Link>
 
-          <div className='hidden items-center space-x-12 md:flex'>
+          <div className='hidden items-center space-x-8 md:flex'>
             {menuItems.map((item) => (
               <a
-                key={item}
-                href={`${appPages.Home}#${item}`}
+                key={item.name}
+                href={`#${item.href}`}
                 className={`nav-link text-white`}
               >
-                {capitalizeFirstLetter(item)}
+                {capitalizeFirstLetter(item.name)}
               </a>
             ))}
 
@@ -82,7 +99,7 @@ export default function Navbar() {
               <button
                 className={`nav-link flex items-center space-x-1 text-white`}
               >
-                <span>Discover</span>
+                <span>{t('discover')}</span>
                 <ChevronDown className='h-4 w-4' />
               </button>
 
@@ -96,13 +113,13 @@ export default function Navbar() {
                     className='absolute left-0 mt-2 w-48 rounded-sm bg-white shadow-lg'
                   >
                     {dropdownItems.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
                         href={item.href}
                         className='block px-4 py-2 text-gray-800 transition-colors hover:bg-gray-100'
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </motion.div>
                 )}
@@ -110,8 +127,9 @@ export default function Navbar() {
             </div>
 
             <a href={`#${homePage.Contact}`} className={`nav-link text-white`}>
-              {capitalizeFirstLetter(homePage.Contact)}
+              {capitalizeFirstLetter(t('contact'))}
             </a>
+            <LanguageSwitcher />
           </div>
 
           <button
@@ -139,27 +157,27 @@ export default function Navbar() {
               </div>
               <div className='mt-24 flex flex-col items-center space-y-8'>
                 {dropdownItems.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
                     href={item.href}
                     className='nav-link text-2xl'
                     onClick={() => setIsOpen(false)}
                   >
                     {capitalizeFirstLetter(item.name)}
-                  </a>
+                  </Link>
                 ))}
                 {menuItems.map((item) => (
                   <a
-                    key={item}
-                    href={`${appPages.Home}#${item}`}
+                    key={item.name}
+                    href={`#${item.href}`}
                     className='nav-link text-2xl'
                     onClick={() => setIsOpen(false)}
                   >
-                    {capitalizeFirstLetter(item)}
+                    {capitalizeFirstLetter(item.name)}
                   </a>
                 ))}
                 <a href={`#${homePage.Contact}`} className='nav-link text-2xl'>
-                  {capitalizeFirstLetter(homePage.Contact)}
+                  {capitalizeFirstLetter(t('contact'))}
                 </a>
               </div>
             </div>

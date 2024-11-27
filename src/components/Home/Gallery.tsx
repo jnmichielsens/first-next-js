@@ -3,13 +3,15 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
-import gallery_1 from '../../public/gallery/gallery_1.jpg';
-import gallery_2 from '../../public/gallery/gallery_2.jpg';
-import gallery_3 from '../../public/gallery/gallery_3.jpg';
-import gallery_4 from '../../public/gallery/gallery_4.jpg';
-import gallery_5 from '../../public/gallery/gallery_5.jpg';
-import gallery_6 from '../../public/gallery/gallery_6.jpg';
-import { homePage } from '../constants/constants';
+import gallery_1 from '../../../public/gallery/gallery_1.jpg';
+import gallery_2 from '../../../public/gallery/gallery_2.jpg';
+import gallery_3 from '../../../public/gallery/gallery_3.jpg';
+import gallery_4 from '../../../public/gallery/gallery_4.jpg';
+import gallery_5 from '../../../public/gallery/gallery_5.jpg';
+import gallery_6 from '../../../public/gallery/gallery_6.jpg';
+import { homePage } from '../../constants/constants';
+import { useTranslations } from 'next-intl';
+import Section from '../Section';
 
 const images = [
   {
@@ -39,23 +41,20 @@ const images = [
 ];
 
 export default function Gallery() {
+  const t = useTranslations('gallery');
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
 
   return (
-    <section
-      id={homePage.Gallery}
-      className='px-6 py-24 md:px-12 lg:px-24'
-      ref={ref}
-    >
+    <Section id={homePage.Gallery} sectionRef={ref}>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8 }}
       >
-        <h2 className='section-title text-center'>Our Creations</h2>
+        <h2 className='section-title text-center'>{t('title')}</h2>
       </motion.div>
 
       <div className='mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
@@ -82,6 +81,6 @@ export default function Gallery() {
           </motion.div>
         ))}
       </div>
-    </section>
+    </Section>
   );
 }

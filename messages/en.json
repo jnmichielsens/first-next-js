@@ -1,0 +1,44 @@
+{
+  "navigation": {
+    "about": "About",
+    "menu": "Menu",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "discover": "Discover",
+    "services": "Services",
+    "events": "Events"
+  },
+  "hero": {
+    "subtitle": "Exceptional Catering for Extraordinary Moments",
+    "cta": "Book Your Event"
+  },
+  "about": {
+    "title": "Our Philosophy",
+    "description": "At Melange Traiteur, we believe that every gathering deserves exceptional cuisine. Our passionate team crafts bespoke menus that blend traditional techniques with contemporary flair, using only the finest seasonal ingredients to create unforgettable culinary experiences."
+  },
+  "menu": {
+    "title": "Sample Menu",
+    "subtitle": "Our menus are customizable to suit your preferences and dietary requirements"
+  },
+  "gallery": {
+    "title": "Our Creations"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "info": {
+      "title": "Contact Information"
+    },
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "date": "Event Date",
+      "guests": "Number of Guests",
+      "message": "Message",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Your message has been sent successfully. We'll get back to you soon!",
+      "error": "Failed to send message"
+    }
+  }
+}

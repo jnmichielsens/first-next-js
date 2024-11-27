@@ -1,20 +1,20 @@
 'use client';
 
 import { Phone, Mail, MapPin, Instagram, Facebook } from 'lucide-react';
-import ContactForm from './ContactForm';
-import { contact, homePage } from '../constants/constants';
+import ContactForm from '../ContactForm';
+import { contact, homePage } from '../../constants/constants';
+import { useTranslations } from 'next-intl';
+import Section from '../Section';
 
 export default function Contact() {
+  const t = useTranslations('contact');
   return (
-    <section
-      id={homePage.Contact}
-      className='bg-white px-6 py-24 md:px-12 lg:px-24'
-    >
+    <Section id={homePage.Contact} className={'bg-zinc-50'}>
       <div className='mx-auto max-w-6xl'>
-        <h2 className='section-title mb-16 text-center'>Get in Touch</h2>
+        <h2 className='section-title mb-16 text-center'>{t('title')}</h2>
         <div className='grid gap-12 md:grid-cols-2'>
           <div>
-            <h3 className='mb-8 text-2xl font-light'>Contact Information</h3>
+            <h3 className='mb-8 text-2xl font-light'>{t('info.title')}</h3>
             <div className='space-y-6'>
               <div className='flex items-center'>
                 <Phone className='mr-4 h-6 w-6' />
@@ -53,6 +53,6 @@ export default function Contact() {
           <ContactForm />
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

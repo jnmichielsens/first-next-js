@@ -1,0 +1,44 @@
+{
+  "navigation": {
+    "about": "À propos",
+    "menu": "Menu",
+    "gallery": "Galerie",
+    "contact": "Contact",
+    "discover": "Découvrir",
+    "services": "Services",
+    "events": "Événements"
+  },
+  "hero": {
+    "subtitle": "Traiteur d'Exception pour Moments Extraordinaires",
+    "cta": "Réserver"
+  },
+  "about": {
+    "title": "Notre Philosophie",
+    "description": "Chez Melange Traiteur, nous croyons que chaque rassemblement mérite une cuisine exceptionnelle. Notre équipe passionnée crée des menus sur mesure qui allient techniques traditionnelles et touches contemporaines, en utilisant uniquement les meilleurs ingrédients de saison pour créer des expériences culinaires inoubliables."
+  },
+  "menu": {
+    "title": "Menu Type",
+    "subtitle": "Nos menus sont personnalisables selon vos préférences et exigences alimentaires"
+  },
+  "gallery": {
+    "title": "Nos Créations"
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "info": {
+      "title": "Informations de Contact"
+    },
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "phone": "Téléphone",
+      "date": "Date de l'événement",
+      "guests": "Nombre d'invités",
+      "message": "Message",
+      "submit": "Envoyer",
+      "sending": "Envoi en cours...",
+      "success": "Votre message a été envoyé avec succès. Nous vous recontacterons bientôt !",
+      "error": "Échec de l'envoi du message"
+    }
+  }
+}
