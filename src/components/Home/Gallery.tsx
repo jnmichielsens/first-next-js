@@ -12,6 +12,7 @@ import gallery_6 from '../../../public/gallery/gallery_6.jpg';
 import { homePage } from '../../constants/constants';
 import { useTranslations } from 'next-intl';
 import Section from '../Section';
+import MainTitle from '../MainTitle';
 
 const images = [
   {
@@ -54,7 +55,7 @@ export default function Gallery() {
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8 }}
       >
-        <h2 className='section-title text-center'>{t('title')}</h2>
+        <MainTitle>{t('title')}</MainTitle>
       </motion.div>
 
       <div className='mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>

@@ -6,6 +6,7 @@ import { ChefHat } from 'lucide-react';
 import { homePage } from '../../constants/constants';
 import { useTranslations } from 'next-intl';
 import Section from '../Section';
+import MainTitle from '../MainTitle';
 
 export default function About() {
   const t = useTranslations('about');
@@ -23,7 +24,7 @@ export default function About() {
         className='mx-auto max-w-4xl text-center'
       >
         <ChefHat className='mx-auto mb-8 h-12 w-12 text-gray-800' />
-        <h2 className='section-title'>{t('title')}</h2>
+        <MainTitle>{t('title')}</MainTitle>
         <p className='mb-12 text-lg leading-relaxed md:text-xl'>
           {t('description')}
         </p>

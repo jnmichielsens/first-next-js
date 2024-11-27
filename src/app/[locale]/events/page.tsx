@@ -7,6 +7,7 @@ import event_2 from '../../../../public/events/event_2.jpg';
 import event_3 from '../../../../public/events/event_3.jpg';
 import ImageBanner from '../../../components/ImageBanner';
 import Section from '../../../components/Section';
+import SubTitle from '../../../components/SubTitle';
 
 const events = [
   {
@@ -50,7 +51,7 @@ export default function Events() {
                     className='object-cover transition-transform duration-500 group-hover:scale-110'
                   />
                 </div>
-                <h3 className='mb-2 text-2xl font-light'>{event.title}</h3>
+                <SubTitle>{event.title}</SubTitle>
                 <p className='mb-4 text-gray-500'>{event.date}</p>
                 <p className='text-gray-600'>{event.description}</p>
               </div>

@@ -4,6 +4,7 @@ import { ChefHat, Users, GlassWater, UtensilsCrossed } from 'lucide-react';
 import service_1 from '../../../../public/services/service_1.jpg';
 import ImageBanner from '../../../components/ImageBanner';
 import Section from '../../../components/Section';
+import SubTitle from '../../../components/SubTitle';
 
 const services = [
   {
@@ -43,7 +44,7 @@ export default function Services() {
             {services.map((service) => (
               <div key={service.title} className='text-center'>
                 <service.icon className='mx-auto mb-6 h-12 w-12 text-gray-800' />
-                <h3 className='mb-4 text-2xl font-light'>{service.title}</h3>
+                <SubTitle>{service.title}</SubTitle>
                 <p className='text-gray-600'>{service.description}</p>
               </div>
             ))}

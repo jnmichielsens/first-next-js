@@ -5,16 +5,18 @@ import ContactForm from '../ContactForm';
 import { contact, homePage } from '../../constants/constants';
 import { useTranslations } from 'next-intl';
 import Section from '../Section';
+import MainTitle from '../MainTitle';
+import SubTitle from '../SubTitle';
 
 export default function Contact() {
   const t = useTranslations('contact');
   return (
     <Section id={homePage.Contact} className={'bg-zinc-50'}>
       <div className='mx-auto max-w-6xl'>
-        <h2 className='section-title mb-16 text-center'>{t('title')}</h2>
-        <div className='grid gap-12 md:grid-cols-2'>
+        <MainTitle>{t('title')}</MainTitle>
+        <div className='grid gap-12 md:grid-cols-2 mt-16'>
           <div>
-            <h3 className='mb-8 text-2xl font-light'>{t('info.title')}</h3>
+            <SubTitle>{t('info.title')}</SubTitle>
             <div className='space-y-6'>
               <div className='flex items-center'>
                 <Phone className='mr-4 h-6 w-6' />

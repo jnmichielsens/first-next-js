@@ -9,24 +9,24 @@
     "events": "Events"
   },
   "hero": {
-    "subtitle": "Exceptional Catering for Extraordinary Moments",
-    "cta": "Book Your Event"
+    "subtitle": "Exceptional catering for extraordinary moments",
+    "cta": "Book your event"
   },
   "about": {
-    "title": "Our Philosophy",
+    "title": "Our philosophy",
     "description": "At Melange Traiteur, we believe that every gathering deserves exceptional cuisine. Our passionate team crafts bespoke menus that blend traditional techniques with contemporary flair, using only the finest seasonal ingredients to create unforgettable culinary experiences."
   },
   "menu": {
-    "title": "Sample Menu",
+    "title": "Menu",
     "subtitle": "Our menus are customizable to suit your preferences and dietary requirements"
   },
   "gallery": {
-    "title": "Our Creations"
+    "title": "Creations"
   },
   "contact": {
-    "title": "Get in Touch",
+    "title": "Contact us for your event!",
     "info": {
-      "title": "Contact Information"
+      "title": "Contact information"
     },
     "form": {
       "name": "Name",

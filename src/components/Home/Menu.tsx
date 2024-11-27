@@ -5,6 +5,8 @@ import { useInView } from 'react-intersection-observer';
 import { homePage } from '../../constants/constants';
 import { useTranslations } from 'next-intl';
 import Section from '../Section';
+import MainTitle from '../MainTitle';
+import SubTitle from '../SubTitle';
 
 const menuCategories = [
   {
@@ -75,7 +77,7 @@ export default function Menu() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className='section-title text-center'>{t('title')}</h2>
+          <MainTitle>{t('title')}</MainTitle>
           <p className='mb-16 text-center text-lg'>{t('subtitle')}</p>
         </motion.div>
 
@@ -88,9 +90,9 @@ export default function Menu() {
               transition={{ duration: 0.8, delay: index * 0.2 }}
               className='space-y-6'
             >
-              <h3 className='border-b border-gray-200 pb-4 text-2xl font-light tracking-wide'>
+              <SubTitle className='border-b border-gray-200 pb-4 tracking-wide'>
                 {category.title}
-              </h3>
+              </SubTitle>
               <div className='space-y-6'>
                 {category.items.map((item) => (
                   <div key={item.name}>
