@@ -41,14 +41,14 @@ export default function LanguageSwitcher() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             transition={{ duration: 0.2 }}
-            className='absolute left-0 mt-2 w-48 rounded-sm bg-white shadow-lg'
+            className='absolute right-0 mt-2 w-36 rounded-sm bg-white shadow-lg'
           >
             {Object.entries(languages).map(([code, name]) => (
               <button
                 key={code}
                 onClick={() => handleLocaleChange(code)}
                 className={`block w-full px-4 py-2 text-left text-sm transition-colors hover:bg-gray-100 ${
-                  locale === code ? 'font-medium' : ''
+                  locale === code ? 'bg-gray-100' : ''
                 }`}
               >
                 {name}

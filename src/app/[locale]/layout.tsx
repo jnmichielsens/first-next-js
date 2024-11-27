@@ -4,7 +4,10 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { Poppins } from 'next/font/google'
 import './globals.css';
+
+const poppins = Poppins({   weight: '300', subsets: ['latin'] })
 
 export default async function LocaleLayout({
   children,
@@ -26,7 +29,7 @@ export default async function LocaleLayout({
     <html lang={locale} className='scroll-smooth'>
       <body>
         <NextIntlClientProvider messages={messages}>
-          <main>
+          <main className={poppins.className}>
             <Navbar />
             {children}
             <Footer />
